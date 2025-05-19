@@ -2,7 +2,7 @@
 //
 // The MIT License (MIT)
 //
-// Copyright (c) 2018 Wizzer Works
+// Copyright (c) 2025 Wizzer Works
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -32,8 +32,8 @@
 // COPYRIGHT_END
 
 // Include Open Inventor header files.
-#include <Inventor/Xt/SoXt.h>
-#include <Inventor/Xt/SoXtRenderArea.h>
+#include <Inventor/Gtk/SoGtk.h>
+#include <Inventor/Gtk/SoGtkRenderArea.h>
 #include <Inventor/nodes/SoCone.h>
 #include <Inventor/nodes/SoDirectionalLight.h>
 #include <Inventor/nodes/SoMaterial.h>
@@ -42,9 +42,9 @@
 
 int main(int argc, char **argv)
 {
-    // Initialize SoXt (and implicitly Coin). This returns a main window to use.
+    // Initialize SoGtk (and implicitly Coin). This returns a main window to use.
     // If unsuccessful, exit.
-    Widget window = SoXt::init(argv[0]);  // Pass the application name.
+    Widget window = SoGtk::init(argv[0]);  // Pass the application name.
     if (window == NULL)
         return 1;
 
@@ -62,7 +62,7 @@ int main(int argc, char **argv)
 
     // Create a render area in which to see our scene graph.
     // The render area will appear within the main window.
-    SoXtRenderArea *renderArea = new SoXtRenderArea(window);
+    SoGtkRenderArea *renderArea = new SoGtkRenderArea(window);
 
     // Make the camera see everything.
     camera->viewAll(root, renderArea->getViewportRegion());
