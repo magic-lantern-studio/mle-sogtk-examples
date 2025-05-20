@@ -44,7 +44,7 @@ int main(int argc, char **argv)
 {
     // Initialize SoGtk (and implicitly Coin). This returns a main window to use.
     // If unsuccessful, exit.
-    Widget window = SoGtk::init(argv[0]);  // Pass the application name.
+    GtkWidget *window = SoGtk::init(argv[0]);  // Pass the application name.
     if (window == NULL)
         return 1;
 
@@ -72,8 +72,8 @@ int main(int argc, char **argv)
     renderArea->setTitle("Hello Cone");
     renderArea->show();
 
-    SoXt::show(window);  // Display main window.
-    SoXt::mainLoop();    // Main Inventor event loop.
+    SoGtk::show(window);  // Display main window.
+    SoGtk::mainLoop();    // Main Inventor event loop.
 
     root->unref();
     return 0;
